@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class Main {
 
-    static int mapReduce(int zero,
+    public static int mapReduce(int zero,
                                 BiFunction<Integer, Integer, Integer> op,
                                 Function<Integer, Integer> f,
                                 int a,
@@ -17,11 +17,11 @@ public class Main {
         return zero;
     }
 
-    static int product(Function<Integer, Integer> f, int a, int b) {
+    public static int product(Function<Integer, Integer> f, int a, int b) {
         return mapReduce(1, (x, y) -> x * y, f, a, b);
     }
 
-    static int sum(Function<Integer, Integer> f, int a, int b) {
+    public static int sum(Function<Integer, Integer> f, int a, int b) {
         return mapReduce(0, Integer::sum, f, a, b);
     }
 
