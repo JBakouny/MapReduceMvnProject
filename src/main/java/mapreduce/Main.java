@@ -21,21 +21,21 @@ public class Main {
 //
 
 
-    private static int product(Function<Integer, Integer> f, int a, int b) {
+    static int product(Function<Integer, Integer> f, int a, int b) {
         if (a > b) {
             return 1;
         } else {
-            return a * product(f, a + 1, b);
+            return f.apply(a) * product(f, a + 1, b);
         }
     }
 
     //    def sum (f : Int => Int, a : Int, b : Int): Int =
 //    mapReduce(0, (x, y) => x + y, f, a, b)
-    private static int sum(Function<Integer, Integer> f, int a, int b) {
+    static int sum(Function<Integer, Integer> f, int a, int b) {
         if (a > b) {
             return 0;
         } else {
-            return a + sum(f, a + 1, b);
+            return f.apply(a) + sum(f, a + 1, b);
         }
     }
 
