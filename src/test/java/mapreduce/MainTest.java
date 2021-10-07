@@ -2,6 +2,8 @@ package mapreduce;
 
 import org.junit.Test;
 
+import java.util.function.BiFunction;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -31,4 +33,11 @@ public class MainTest {
     public void testSumPerf() {
         assertEquals(Main.sumInts(5, 100000), 705082694);
     }
+
+    @Test
+    public void testJavaPartialApplication() {
+        BiFunction<Integer, Integer, Integer> op = (a, b) -> Main.product(x -> x + x, a, b);
+        assertEquals(Main.mapReduce(1, op, x->x, 1, 5), 1);
+    }
+
 }
