@@ -26,4 +26,9 @@ public class MainTest {
     public void testProductFunction() {
         assertEquals(Main.product(x -> x * x, 1, 5), 14400);
     }
+
+    @Test
+    public void testSumPerf() {
+        assertEquals(Main.sumInts(5, 100000), 705082694);
+    }
 }
