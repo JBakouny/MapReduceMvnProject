@@ -10,11 +10,11 @@ public class Main {
                                 Function<Integer, Integer> f,
                                 int a,
                                 int b) {
-        if (a > b) {
-            return zero;
-        } else {
-            return mapReduce(op.apply(zero, f.apply(a)), op, f, a + 1, b );
+        while(a <= b) {
+            zero = op.apply(zero, f.apply(a));
+            ++a;
         }
+        return zero;
     }
 
     public static int product(Function<Integer, Integer> f, int a, int b) {
