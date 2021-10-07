@@ -9,12 +9,16 @@ public class MainTest {
 
     @Test
     public void testSumInts() {
-        assertEquals(Main.sumInts(5, 10), 45);
+        int expected = 45;
+        int actual = Main.sumInts().apply(5, 10);
+        assertEquals(actual, expected);
     }
 
     @Test
     public void testSumCube() {
-        assertEquals(Main.sumCube(5, 10), 2925);
+        int expected = 2925;
+        int actual = Main.sumCube().apply(5, 10);
+        assertEquals(actual, expected);
     }
 
     @Test
@@ -24,11 +28,15 @@ public class MainTest {
 
     @Test
     public void testProductFunction() {
-        assertEquals(Main.product(x -> x * x, 1, 5), 14400);
+        int expected = 14400;
+        int actual = Main.product(x -> x * x).apply(1, 5);
+        assertEquals(actual, expected);
     }
 
     @Test
     public void testSumPerf() {
-        assertEquals(Main.sumInts(5, 100000), 705082694);
+        int expected = 705082694;
+        int actual = Main.sumInts().apply(5, 100000);
+        assertEquals(actual, expected);
     }
 }
